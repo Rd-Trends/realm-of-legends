@@ -2,26 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .circle_with_animated_border {
+    @apply relative flex items-center justify-center rounded-full aspect-square w-[400px] lg:w-[25rem] max-w-[70%] bg-[#333] shadow-[-60px_-60px_120px_0px_#1E1E1E_inset,_60px_60px_120px_0px_#3E3E3E_inset];
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .circle_with_animated_border::before {
+    @apply absolute bg-transparent rounded-full w-full h-full border-r-2 border-[#FCFCCF] animate-spin-slow;
+    content: "";
+  }
 }
