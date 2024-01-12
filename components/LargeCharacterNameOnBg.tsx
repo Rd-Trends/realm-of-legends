@@ -27,7 +27,7 @@ const LargeCharacterNameOnbg = ({
           left: direction === "right" ? "-100%" : "100%",
         }}
         transition={{ duration: 0.5, delay: !mounted ? 1.2 : 0 }}
-        className=" absolute top-0 translate-y-1/2  right-0 h-full z-10 text-[150px] lg:text-[400px] text-[rgba(255,_255,_255,_0.15)] font-extrabold leading-[0px] mx-0 px-0 ">
+        className=" absolute top-0 translate-y-1/2  right-0 h-full z-10 text-[150px] md:text-[250px] lg:text-[400px] text-[rgba(255,_255,_255,_0.15)] font-extrabold leading-[0px] mx-0 px-0 ">
         {activeCharacter.name}
       </motion.span>
     </AnimatePresence>

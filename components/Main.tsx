@@ -5,44 +5,11 @@ import Footer from "./Footer";
 import ControlBtn from "./ControlBtn";
 import LargeCharacterNameOnbg from "./LargeCharacterNameOnBg";
 import ArrowLeft from "@/vectors/arrowLeft";
-import ArrowLight from "@/vectors/arrowLight";
+import ArrowRight from "@/vectors/arrowRight";
 import CharactersImage from "./CharactersImage";
 import CharacterName from "./CharacterName";
-
-const charactersData = [
-  {
-    id: 1,
-    name: "Ravenna",
-    image: {
-      small: "/Ravenna.png",
-      large: "/RavennaLG.png",
-    },
-  },
-  {
-    id: 2,
-    name: "Drakonos",
-    image: {
-      small: "/Drakonos.png",
-      large: "/DrakonosLG.png",
-    },
-  },
-  {
-    id: 3,
-    name: "Valkyra",
-    image: {
-      small: "/Valkyra.png",
-      large: "/ValkyraLG.png",
-    },
-  },
-  {
-    id: 4,
-    name: "Ignatia",
-    image: {
-      small: "/Ignatia.png",
-      large: "/IgnatiaLG.png",
-    },
-  },
-];
+import Div100vh from "react-div-100vh";
+import { charactersData } from "@/constants/charactersData";
 
 const Main = () => {
   const [ids, setIds] = useState(() => {
@@ -78,7 +45,7 @@ const Main = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-between overflow-hidden">
+    <Div100vh className="relative w-screen flex flex-col justify-between overflow-hidden">
       <Bg activeCharacter={activeCharacter} direction={bgAnimationDirection} />
       <Header />
       <div className=" flex flex-col items-center w-full space-y-16">
@@ -100,7 +67,7 @@ const Main = () => {
             <ControlBtn
               onClick={handleNext}
               disabled={characters?.length === 1}>
-              <ArrowLight />
+              <ArrowRight />
             </ControlBtn>
           </div>
         </div>
@@ -108,7 +75,7 @@ const Main = () => {
         <CharacterName activeCharacter={activeCharacter} direction="left" />
       </div>
       <Footer activeIndex={characters.length} />
-    </div>
+    </Div100vh>
   );
 };
 

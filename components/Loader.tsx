@@ -3,14 +3,14 @@
 import { italianno } from "@/app/font";
 import Logo from "./Logo";
 import { AnimatePresence, motion } from "framer-motion";
+import Div100vh from "react-div-100vh";
 
 const Loader = ({ timer }: { timer: number }) => {
   return (
-    <div className=" w-screen h-screen bg-[#333] flex flex-col items-center justify-center overflow-hidden">
+    <Div100vh className=" w-screen bg-[#333] flex flex-col items-center justify-center overflow-hidden">
       <div className=" w-fit absolute top-8 mx-auto">
         <Logo />
       </div>
-      {/* <AnimatePresence> */}
       {timer < 100 && (
         <>
           <motion.div
@@ -27,8 +27,7 @@ const Loader = ({ timer }: { timer: number }) => {
           </motion.div>
         </>
       )}
-      {/* </AnimatePresence> */}
-    </div>
+    </Div100vh>
   );
 };
 

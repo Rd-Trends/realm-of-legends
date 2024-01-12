@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { AnimatePresence, motion } from "framer-motion";
 import Main from "./Main";
+import Div100vh from "react-div-100vh";
 
 const Container = () => {
   const [timer, setTimer] = useState(0);
@@ -25,7 +26,7 @@ const Container = () => {
   }, []);
 
   return (
-    <div className=" w-screen h-screen overflow-hidden">
+    <Div100vh className=" w-screen overflow-hidden">
       <AnimatePresence>
         {timer < 100 && (
           <motion.div
@@ -37,7 +38,7 @@ const Container = () => {
         )}
         {timer >= 100 && <Main key="main" />}
       </AnimatePresence>
-    </div>
+    </Div100vh>
   );
 };
 
